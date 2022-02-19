@@ -1,5 +1,6 @@
 package src.boggle.model;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Boggle  {
@@ -10,6 +11,7 @@ public class Boggle  {
     private StringBuilder mot;
     private int score = 0;
     private int ligneChoisie, colonneChoisie ;  // dernière case choisie
+    private ArrayList<Observateur> observateurs ;
 
 
     /**
