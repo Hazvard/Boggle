@@ -1,5 +1,7 @@
 package src.boggle.model;
 
+import src.boggle.Dictionnaire;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -113,6 +115,10 @@ public class Boggle  {
             this.ligneChoisie = lig;
             this.colonneChoisie = col;
         }
+    }
+
+    public void ajouterObservteur(Observateur o){
+        observateurs.add(o) ;
     }
 
 

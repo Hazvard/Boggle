@@ -1,4 +1,4 @@
-package src.boggle.model;
+package src.boggle;
 
 
 import java.io.InputStream;
