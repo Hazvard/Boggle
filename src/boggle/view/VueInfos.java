@@ -11,15 +11,17 @@ public class VueInfos extends TilePane implements Observateur {
 
     private Label label1 ;
     private Label label2 ;
+    private Boggle boggle;
 
     public VueInfos(Boggle bog) {
-        bog.ajouterObservteur(this);
+        this.boggle = bog;
+        this.boggle.ajouterObservteur(this);
 
 
         label1 = new Label("Votre mot :");
         label1.setStyle("-fx-font: 22 Impact ; -fx-text-fill: #BEC2BE");
         label1.setMinSize(300, 150);
-        label1.setMaxSize(300, 150);
+        label1.setMaxSize(1000, 150);
 
 
 
@@ -34,6 +36,7 @@ public class VueInfos extends TilePane implements Observateur {
 
     @Override
     public void reagir() {
-
+        label2.setText(new StringBuilder("Votre mot :" + boggle.getMot()).toString());
     }
+
 }

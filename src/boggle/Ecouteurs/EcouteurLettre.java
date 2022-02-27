@@ -13,6 +13,7 @@ public class EcouteurLettre implements EventHandler<ActionEvent>{
 
     public EcouteurLettre(Boggle bog, int ligne, int colone){
         this.boggle = bog ;
+
         this.col = colone ;
         this.lig = ligne ;
 
@@ -21,6 +22,6 @@ public class EcouteurLettre implements EventHandler<ActionEvent>{
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        boggle.getLettre(lig, col);
+        boggle.ajouterLettre(lig, col);
     }
 }

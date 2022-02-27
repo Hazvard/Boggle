@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import src.boggle.model.Boggle;
+import src.boggle.view.PanneauControle;
 import src.boggle.view.VueInfos;
 import src.boggle.view.VueLettres;
 
@@ -16,7 +17,7 @@ public class Main extends Application {
         BorderPane root = new BorderPane() ;
         root.setBottom(new VueInfos(bog)) ;
         root.setCenter(new VueLettres(bog)) ;
-        //root.setRight(new PanneauControle(bog)) ;
+        root.setRight(new PanneauControle(bog)) ;
         root.setStyle("-fx-background-color: #606668");
         primaryStage.setScene(new Scene(root, 1000, 700));
         primaryStage.setTitle("Le fabuleux Jeu du Boggle");

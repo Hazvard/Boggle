@@ -1,6 +1,7 @@
 package src.boggle.model;
 
 import src.boggle.Dictionnaire;
+import src.boggle.view.VueInfos;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -34,6 +35,8 @@ public class Boggle  {
         this.mot = new StringBuilder("");
         this.ligneChoisie = -1 ;
         this.colonneChoisie = -1 ;
+
+        observateurs = new ArrayList<Observateur>();
     }
 
     /**
@@ -114,12 +117,30 @@ public class Boggle  {
             this.mot.append(this.getLettre(lig, col));
             this.ligneChoisie = lig;
             this.colonneChoisie = col;
+
+            for (Observateur observateur : observateurs) {
+                observateur.reagir();
+            }
+
         }
     }
 
     public void ajouterObservteur(Observateur o){
         observateurs.add(o) ;
     }
+
+    public String getMot(){
+        return  mot.toString() ;
+    }
+
+    public int getLigneChoisie(){
+        return  ligneChoisie ;
+    }
+
+    public int getColonneChoisie(){
+        return  colonneChoisie ;
+    }
+
 
 
 }

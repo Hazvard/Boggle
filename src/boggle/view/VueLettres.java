@@ -43,6 +43,6 @@ public class VueLettres extends GridPane implements Observateur {
 
     @Override
     public void reagir() {
-
+        buttons[boggle.getLigneChoisie()][boggle.getColonneChoisie()].setStyle("-fx-font: 22 Impact ; -fx-background-color: #BEC2BE ; -fx-border-radius: 6  ; -fx-text-fill: #C91003 ; -fx-border-width: 0");
     }
 }
